@@ -13,17 +13,34 @@
 // console.log("calcAge(20)", calcAge(20));
 
 
+// //Write a function that returns the string "something" joined with a space " " and the given argument a.
+
+// const somethingString = (string) => {
+
+//   return `something ${string}`
+
+// }
+
+
+// console.log(somethingString("is better than nothing")) 
+// console.log('1`````````````````````````````````````')
+// console.log(somethingString("Bob Jane"))
+// console.log('1`````````````````````````````````````')
+// console.log(somethingString("something"))
+
+
+
 //Write a function that returns the string "something" joined with a space " " and the given argument a.
 
-const somethingString = (string) => {
+const addition = (a,b) => {
 
-  return `something ${string}`
+  return (a+b)
 
 }
 
 
-console.log(somethingString("is better than nothing")) 
+console.log(addition(3,2)) 
 console.log('1`````````````````````````````````````')
-console.log(somethingString("Bob Jane"))
+console.log(addition(-3,-6))
 console.log('1`````````````````````````````````````')
-console.log(somethingString("something"))
+console.log(addition(7,3))
