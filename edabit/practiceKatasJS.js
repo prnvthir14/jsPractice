@@ -194,32 +194,46 @@
 
 //Create a function which returns the number of true values there are in an array.
 
-const countTrue = (arr) => {
-  //all items of array are either true or false
-  //loop through array, if true, update counter
+// const countTrue = (arr) => {
+//   //all items of array are either true or false
+//   //loop through array, if true, update counter
 
-  //return 0 if arr.length === 0
+//   //return 0 if arr.length === 0
 
-  let countTrueVals = 0;
+//   let countTrueVals = 0;
 
-  if (arr.length === 0) {
-    return 0;
+//   if (arr.length === 0) {
+//     return 0;
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === true) {
+//       countTrueVals++;
+//     } else {
+//       //do nothing
+//     }
+//   }
+
+//   return countTrueVals;
+// };
+
+// console.log(countTrue([true, false, false, true, false]));
+
+// console.log(countTrue([false, false, false, false]));
+
+// console.log(countTrue([]));
+
+//Number of Squares in an N * N Grid
+
+const numberSquares = (n) => {
+  let number = 0;
+  //start by adding n**n, (n-1)**(n-1)
+
+  for (let i = n; i > 0; i--) {
+    number += i ** 2;
   }
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === true) {
-      countTrueVals++;
-    } else {
-      //do nothing
-    }
-  }
-
-  return countTrueVals;
+  return number;
 };
 
-console.log(countTrue([true, false, false, true, false]));
-
-console.log(countTrue([false, false, false, false]));
-
-console.log(countTrue([]));
-
+console.log(numberSquares(4));
