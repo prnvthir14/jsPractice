@@ -136,37 +136,58 @@
 // console.log(canNest([1, 2, 3, 4], [2, 3]));
 
 // Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order. [min, max]
-function minMax(arr) {
-  // console.log('hi1')
-  let returnArr = [Infinity, -Infinity];
+// function minMax(arr) {
+//   // console.log('hi1')
+//   let returnArr = [Infinity, -Infinity];
 
-  let stillLoop = true;
-  //counter
-  let i = 0;
-  while (stillLoop) {
-    //check current number against current min/max
-    if (arr[i] < returnArr[0]) {
-      //check if lower than current min and set if so
-      returnArr[0] = arr[i];
-    } else if (arr[i] > returnArr[1]) {
-      //check if higher than current max and set if so
-      returnArr[1] = arr[i];
-    }
+//   let stillLoop = true;
+//   //counter
+//   let i = 0;
+//   while (stillLoop) {
+//     //check current number against current min/max
+//     if (arr[i] < returnArr[0]) {
+//       //check if lower than current min and set if so
+//       returnArr[0] = arr[i];
+//     } else if (arr[i] > returnArr[1]) {
+//       //check if higher than current max and set if so
+//       returnArr[1] = arr[i];
+//     }
 
-    //controller for loop to keep running or not
-    if (i <= arr.length) {
-      i++;
-      stillLoop = true;
-    } else {
-      stillLoop = false;
-    }
+//     //controller for loop to keep running or not
+//     if (i <= arr.length) {
+//       i++;
+//       stillLoop = true;
+//     } else {
+//       stillLoop = false;
+//     }
+//   }
+
+//   return returnArr;
+// }
+
+// console.log(minMax([1, 2, 3, 4, 5]));
+// // console.log("---------------");
+//  console.log(minMax([2334454, 5]));
+// // console.log("---------------");
+// // console.log(minMax([1]));
+
+// Write a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.
+
+const largestSwap = (num) => {
+  //we have num, we need to invert and store it and then compare num against numInverted
+  //can loop through and revese num?
+  //dont think indexing number is possible..
+
+  let numInverse =
+    parseFloat(num.toString().split("").reverse().join("")) * Math.sign(num);
+
+  if (num >= numInverse) {
+    return true;
+  } else {
+    return false;
   }
+};
 
-  return returnArr;
-}
-
-console.log(minMax([1, 2, 3, 4, 5]));
-// console.log("---------------");
- console.log(minMax([2334454, 5]));
-// console.log("---------------");
-// console.log(minMax([1]));
+console.log(largestSwap(27));
+console.log(largestSwap(53));
+console.log(largestSwap(99));
