@@ -173,21 +173,21 @@
 
 // Write a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.
 
-const largestSwap = (num) => {
-  //we have num, we need to invert and store it and then compare num against numInverted
-  //can loop through and revese num?
-  //dont think indexing number is possible..
+// const largestSwap = (num) => {
+//   //we have num, we need to invert and store it and then compare num against numInverted
+//   //can loop through and revese num?
+//   //dont think indexing number is possible..
 
-  let numInverse =
-    parseFloat(num.toString().split("").reverse().join("")) * Math.sign(num);
+//   let numInverse =
+//     parseFloat(num.toString().split("").reverse().join("")) * Math.sign(num);
 
-  if (num >= numInverse) {
-    return true;
-  } else {
-    return false;
-  }
-};
+//   if (num >= numInverse) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-console.log(largestSwap(27));
-console.log(largestSwap(53));
-console.log(largestSwap(99));
+// console.log(largestSwap(27));
+// console.log(largestSwap(53));
+// console.log(largestSwap(99));
