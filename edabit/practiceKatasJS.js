@@ -191,3 +191,35 @@
 // console.log(largestSwap(27));
 // console.log(largestSwap(53));
 // console.log(largestSwap(99));
+
+//Create a function which returns the number of true values there are in an array.
+
+const countTrue = (arr) => {
+  //all items of array are either true or false
+  //loop through array, if true, update counter
+
+  //return 0 if arr.length === 0
+
+  let countTrueVals = 0;
+
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === true) {
+      countTrueVals++;
+    } else {
+      //do nothing
+    }
+  }
+
+  return countTrueVals;
+};
+
+console.log(countTrue([true, false, false, true, false]));
+
+console.log(countTrue([false, false, false, false]));
+
+console.log(countTrue([]));
+
