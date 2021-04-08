@@ -225,15 +225,51 @@
 
 //Number of Squares in an N * N Grid
 
-const numberSquares = (n) => {
-  let number = 0;
-  //start by adding n**n, (n-1)**(n-1)
+// const numberSquares = (n) => {
+//   let number = 0;
+//   //start by adding n**n, (n-1)**(n-1)
 
-  for (let i = n; i > 0; i--) {
-    number += i ** 2;
-  }
+//   for (let i = n; i > 0; i--) {
+//     number += i ** 2;
+//   }
 
-  return number;
-};
+//   return number;
+// };
 
-console.log(numberSquares(4));
+// console.log(numberSquares(4));
+
+//What's Hiding Amongst the Crowd?
+//A word is on the loose and now has tried to hide amongst a crowd of tall letters! Help write a function to detect what the word is, knowing the following rules:
+
+// The wanted word is in lowercase.
+// The crowd of letters is all in uppercase.
+// Note that the word will be spread out amongst the random letters, but their letters remain in the same order.
+
+// const detectWord = (str) => {
+//   //have a str with lower and uppercase chars. The lowerCase chars make up a word we need to return
+//   let lowerCaseWord = "";
+
+//   //need to loop through str, everytime we get to a lowercase char, add it to our return var
+
+//   for (char of str) {
+//     //char = each character in string
+
+//     //need to check if the current char is lowerCase or not
+//     //if lower-case; add that char to lowerCaseWord
+//     //otherwise do nothing
+//     if (char === char.toLowerCase()) {
+//       lowerCaseWord += char;
+//     } else {
+//       //do nothing
+//     }
+//   }
+
+//   //return lowerCaseWord
+//   return lowerCaseWord;
+// };
+
+// console.log(detectWord("UcUNFYGaFYFYGtNUH"));
+// console.log(detectWord("bEEFGBuFBRrHgUHlNFYaYr"));
+// console.log(detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment"));
+
+
