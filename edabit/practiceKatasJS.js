@@ -134,3 +134,39 @@
 // console.log(canNest([9, 9, 8], [8, 9]));
 // console.log("------------------------------");
 // console.log(canNest([1, 2, 3, 4], [2, 3]));
+
+// Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order. [min, max]
+function minMax(arr) {
+  // console.log('hi1')
+  let returnArr = [Infinity, -Infinity];
+
+  let stillLoop = true;
+  //counter
+  let i = 0;
+  while (stillLoop) {
+    //check current number against current min/max
+    if (arr[i] < returnArr[0]) {
+      //check if lower than current min and set if so
+      returnArr[0] = arr[i];
+    } else if (arr[i] > returnArr[1]) {
+      //check if higher than current max and set if so
+      returnArr[1] = arr[i];
+    }
+
+    //controller for loop to keep running or not
+    if (i <= arr.length) {
+      i++;
+      stillLoop = true;
+    } else {
+      stillLoop = false;
+    }
+  }
+
+  return returnArr;
+}
+
+console.log(minMax([1, 2, 3, 4, 5]));
+// console.log("---------------");
+ console.log(minMax([2334454, 5]));
+// console.log("---------------");
+// console.log(minMax([1]));
