@@ -24,27 +24,32 @@
 // 2. Write a JavaScript function that checks whether a passed string is palindrome or not? Go to the editor
 // A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.
 
-const checkForPalindrom = (strToCheck) => {
-  //need to reverese and store string and then compare 2 values
-  let inversestrToCheck = "";
-  let strToCheckTrimmed = strToCheck.split(" ").join("");
-   console.log('strToCheckTrimmed',strToCheckTrimmed);
+// const checkForPalindrom = (strToCheck) => {
+//   //need to reverese and store string and then compare 2 values
+//   let inversestrToCheck = "";
+//   let strToCheckTrimmed = strToCheck.split(" ").join("");
+//    console.log('strToCheckTrimmed',strToCheckTrimmed);
 
-  for (let i = strToCheckTrimmed.length - 1; i >= 0; i--) {
-    //console.log(strToCheck[i]);
-    inversestrToCheck += strToCheckTrimmed[i];
-  }
+//   for (let i = strToCheckTrimmed.length - 1; i >= 0; i--) {
+//     //console.log(strToCheck[i]);
+//     inversestrToCheck += strToCheckTrimmed[i];
+//   }
 
-  // console.log('inversestrToCheck', inversestrToCheck)
+//   // console.log('inversestrToCheck', inversestrToCheck)
 
-  if (strToCheckTrimmed === inversestrToCheck) {
-    return true;
-  } else {
-    return false;
-  }
-};
+//   if (strToCheckTrimmed === inversestrToCheck) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-console.log(checkForPalindrom("madamqqqqqqq"));
-console.log(checkForPalindrom("madam"))
-console.log(checkForPalindrom("nurses run"))
+// console.log(checkForPalindrom("madamqqqqqqq"));
+// console.log(checkForPalindrom("madam"))
+// console.log(checkForPalindrom("nurses run"))
 
+
+// 3. Write a JavaScript function that generates all combinations of a string. Go to the editor
+// Example string : 'dog'
+// Expected Output : d,do,dog,o,og,g
+// Click me to see the solution
