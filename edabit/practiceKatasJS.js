@@ -291,8 +291,34 @@
 // 2 - 11
 // 3 - 16
 
-function matchHouses(step) {
-  // looks like it is step*5+1
-  //returns # of peices required for a given step
-  return step * 5 + 1;
-}
+// function matchHouses(step) {
+//   // looks like it is step*5+1
+//   //returns # of peices required for a given step
+//   if (step === 0) {
+//     return 0;
+//   } else {
+//     return step * 5 + 1;
+//   }
+// }
+
+//Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.
+const toArray = function (objToConvert) {
+  const reutrnArray = [];
+
+  if (Object.keys(objToConvert).length === 0) {
+    return reutrnArray;
+  } else {
+    //want to take an object,
+    //FOR EACH KVPAIR,  we want to create another array
+    // where the first element = key and every other element = values
+    for (key in objToConvert) {
+      // console.log(Object.keys(objToConvert).length)
+      let arrayToAdd = [key, objToConvert[key]];
+      reutrnArray.push(arrayToAdd);
+    }
+    return reutrnArray;
+  }
+};
+
+console.log(toArray({ a: 1, b: 2 }));
+console.log(toArray({ shrimp: 15, tots: 12 }));
