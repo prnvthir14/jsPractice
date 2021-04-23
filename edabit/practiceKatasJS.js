@@ -279,9 +279,20 @@
 //   let middleIndexArr1 = Math.floor(arr1.length/2);
 //   arr1.splice(middleIndexArr1,0, ...arr2);
 
-//   return arr1  
+//   return arr1
 
 // }
 
 // console.log(tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]));
 
+// Create a function that takes a number (step) as an argument and returns the number of matchsticks in that step. See step 1, 2 and 3 in the image above.
+// step - return
+// 1 - 6
+// 2 - 11
+// 3 - 16
+
+function matchHouses(step) {
+  // looks like it is step*5+1
+  //returns # of peices required for a given step
+  return step * 5 + 1;
+}
