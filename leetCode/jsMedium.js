@@ -45,84 +45,92 @@
 
 // Given an integer, convert it to a roman numeral.
 
-const intToRoman = (num) => {
-  let retrunChar = "";
+// const intToRoman = (num) => {
+//   let retrunChar = "";
 
-  //want to
-  while (num > 0) {
-    //need to handle and add edgeCases before regular chars
-    //1001>
-    while (num >= 1000) {
-      retrunChar += "M";
-      num -= 1000;
-    }
+//   //want to
+//   while (num > 0) {
+//     //need to handle and add edgeCases before regular chars
+//     //1001>
+//     while (num >= 1000) {
+//       retrunChar += "M";
+//       num -= 1000;
+//     }
 
-    //501---1000
-    while (num >= 500) {
-      if (num >= 900) {
-        retrunChar += "CM";
-        num -= 900;
-      } else {
-        retrunChar += "D";
-        num -= 500;
-      }
-    }
-    //101---500
-    while (num >= 100) {
-      if (num >= 400) {
-        retrunChar += "CD";
-        num -= 400;
-      } else {
-        retrunChar += "C";
-        num -= 100;
-      }
-    }
-    //51---100
-    while (num >= 50) {
-      if (num >= 90) {
-        retrunChar += "XC";
-        num -= 90;
-      } else {
-        retrunChar += "L";
-        num -= 50;
-      }
-    }
-    //11---50
-    while (num >= 10) {
-      if (num >= 40) {
-        retrunChar += "XL";
-        num -= 40;
-      } else {
-        retrunChar += "X";
-        num -= 10;
-      }
-    }
-    //6---10
-    while (num >= 5) {
-      if (num >= 9) {
-        retrunChar += "IX";
-        num -= 9;
-      } else {
-        console.log('hi')
-        retrunChar += "V";
-        num -= 5;
-      }
-    }
-    //1---5
-    while (num > 0) {
-      if (num >= 4) {
-        retrunChar += "IV";
-        num -= 4;
-      } else if (num < 4) {
-        console.log('hi')
-        retrunChar += "I";
-        num -= 1;
-      }
-    }
-  }
+//     //501---1000
+//     while (num >= 500) {
+//       if (num >= 900) {
+//         retrunChar += "CM";
+//         num -= 900;
+//       } else {
+//         retrunChar += "D";
+//         num -= 500;
+//       }
+//     }
+//     //101---500
+//     while (num >= 100) {
+//       if (num >= 400) {
+//         retrunChar += "CD";
+//         num -= 400;
+//       } else {
+//         retrunChar += "C";
+//         num -= 100;
+//       }
+//     }
+//     //51---100
+//     while (num >= 50) {
+//       if (num >= 90) {
+//         retrunChar += "XC";
+//         num -= 90;
+//       } else {
+//         retrunChar += "L";
+//         num -= 50;
+//       }
+//     }
+//     //11---50
+//     while (num >= 10) {
+//       if (num >= 40) {
+//         retrunChar += "XL";
+//         num -= 40;
+//       } else {
+//         retrunChar += "X";
+//         num -= 10;
+//       }
+//     }
+//     //6---10
+//     while (num >= 5) {
+//       if (num >= 9) {
+//         retrunChar += "IX";
+//         num -= 9;
+//       } else {
+//         console.log('hi')
+//         retrunChar += "V";
+//         num -= 5;
+//       }
+//     }
+//     //1---5
+//     while (num > 0) {
+//       if (num >= 4) {
+//         retrunChar += "IV";
+//         num -= 4;
+//       } else if (num < 4) {
+//         console.log('hi')
+//         retrunChar += "I";
+//         num -= 1;
+//       }
+//     }
+//   }
 
-  return retrunChar;
-};
+//   return retrunChar;
+// };
 
-let numer = 5;
-console.log(intToRoman(numer));
+// let numer = 5;
+// console.log(intToRoman(numer));
+
+
+
+
+
+
+
+
