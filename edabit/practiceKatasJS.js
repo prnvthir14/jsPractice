@@ -360,61 +360,61 @@
 // concat([1, 2, 3], [4, 5], [6, 7])
 // ➞ [1, 2, 3, 4, 5, 6, 7]
 
-const changeEnough = function (change, amountDue) {
-  let totalSumInPocket = 0;
-  if (change.length === 0) {
-    return false;
-  } else {
-    //want to check if we have enough pocket change for an item
-    for (let i = 0; i < change.length; i++) {
-      switch (i) {
-        case 0:
-          // console.log('0')
-          //this is the quarters
-          let valOfQuarters = change[i] * 25;
-          i++;
-          // console.log('valOfQuarters',valOfQuarters)
-          totalSumInPocket += valOfQuarters;
+// const changeEnough = function (change, amountDue) {
+//   let totalSumInPocket = 0;
+//   if (change.length === 0) {
+//     return false;
+//   } else {
+//     //want to check if we have enough pocket change for an item
+//     for (let i = 0; i < change.length; i++) {
+//       switch (i) {
+//         case 0:
+//           // console.log('0')
+//           //this is the quarters
+//           let valOfQuarters = change[i] * 25;
+//           i++;
+//           // console.log('valOfQuarters',valOfQuarters)
+//           totalSumInPocket += valOfQuarters;
 
-        case 1:
-          // console.log('1')
-          //this is the quarters
-          let valOfDimes = change[i] * 10;
-          i++;
-          // console.log('valOfDimes',valOfDimes)
-          totalSumInPocket += valOfDimes;
+//         case 1:
+//           // console.log('1')
+//           //this is the quarters
+//           let valOfDimes = change[i] * 10;
+//           i++;
+//           // console.log('valOfDimes',valOfDimes)
+//           totalSumInPocket += valOfDimes;
 
-        case 2:
-          // console.log('2')
-          //this is the quarters
-          let valOfNickels = change[i] * 5;
-          i++;
-          // console.log('valOfNickels',valOfNickels)
-          totalSumInPocket += valOfNickels;
+//         case 2:
+//           // console.log('2')
+//           //this is the quarters
+//           let valOfNickels = change[i] * 5;
+//           i++;
+//           // console.log('valOfNickels',valOfNickels)
+//           totalSumInPocket += valOfNickels;
 
-        case 3:
-          // console.log('3')
-          //this is the quarters
-          let valOfPennies = change[i] * 1;
-          i++;
-          // console.log('valOfPennies',valOfPennies)
-          totalSumInPocket += valOfPennies;
-      }
-    }
+//         case 3:
+//           // console.log('3')
+//           //this is the quarters
+//           let valOfPennies = change[i] * 1;
+//           i++;
+//           // console.log('valOfPennies',valOfPennies)
+//           totalSumInPocket += valOfPennies;
+//       }
+//     }
 
-    // console.log("totalSumInPocket", totalSumInPocket);
-    if (totalSumInPocket >= (amountDue * 100)) {
-      //you can afford the item
-      return true;
-    } else {
-      //you cant
-      return false;
-    }
-  }
-};
+//     // console.log("totalSumInPocket", totalSumInPocket);
+//     if (totalSumInPocket >= (amountDue * 100)) {
+//       //you can afford the item
+//       return true;
+//     } else {
+//       //you cant
+//       return false;
+//     }
+//   }
+// };
 
-console.log(changeEnough(([30, 40, 20, 5], 12.55)));
-console.log((30*25)+(40*10)+(20*5)+(5*1))
+// console.log(changeEnough(([30, 40, 20, 5], 12.55)));
+// console.log((30*25)+(40*10)+(20*5)+(5*1))
 // Test.assertEquals(changeEnough([2, 100, 0, 0], 14.11), false);
 // Test.assertEquals(changeEnough([0, 0, 20, 5], 0.75), true);
 // Test.assertEquals(changeEnough([30, 40, 20, 5], 12.55), true);
@@ -422,3 +422,18 @@ console.log((30*25)+(40*10)+(20*5)+(5*1))
 // Test.assertEquals(changeEnough([1, 0, 5, 219], 19.99), false);
 // Test.assertEquals(changeEnough([1, 0, 2555, 219], 127.75), true);
 // Test.assertEquals(changeEnough([1, 335, 0, 219], 35.21), true);
+
+const whichIsLarger = function (f, g) {
+  const resultFromF = f();
+  const resultFromG = g();
+
+  if (resultFromF > resultFromG) {
+    return "f";
+  } else if (resultFromG > resultFromF) {
+    return "g";
+  } else {
+    return "neither";
+  }
+};
+
+console.log(whichIsLarger(() => 5, () => 10))
