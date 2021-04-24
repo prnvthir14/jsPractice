@@ -302,23 +302,123 @@
 // }
 
 //Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.
-const toArray = function (objToConvert) {
-  const reutrnArray = [];
+// const toArray = function (objToConvert) {
+//   const reutrnArray = [];
 
-  if (Object.keys(objToConvert).length === 0) {
-    return reutrnArray;
+//   if (Object.keys(objToConvert).length === 0) {
+//     return reutrnArray;
+//   } else {
+//     //want to take an object,
+//     //FOR EACH KVPAIR,  we want to create another array
+//     // where the first element = key and every other element = values
+//     for (key in objToConvert) {
+//       // console.log(Object.keys(objToConvert).length)
+//       let arrayToAdd = [key, objToConvert[key]];
+//       reutrnArray.push(arrayToAdd);
+//     }
+//     return reutrnArray;
+//   }
+// };
+
+// console.log(toArray({ a: 1, b: 2 }));
+// console.log(toArray({ shrimp: 15, tots: 12 }));
+
+// const sortDrinkByPrice = function (drinks) {
+//   if (Object.keys(drinks).length === 0) {
+//     return [];
+//   } else {
+//     console.log("hi");
+//     // drinks.sort(function (a, b) {
+//     //   return a.as - b.price;
+//     // });
+
+//     function reduce(a, b) {
+//       return a.price - b.price;
+//     }
+
+//     drinks.sort(reduce);
+//   }
+// };
+
+// drinks = [
+//   { name: "lemonade", price: 50 },
+//   { name: "lime", price: 10 },
+// ];
+
+// console.log(sortDrinkByPrice(drinks));
+
+// const concat = function (listOfArr) {
+//   let returnArr = [];
+
+//   //takes n number of arrays and joins them together
+//   for (let i = 0; i < listOfArr.length; i++) {
+//     console.log(listOfArr[i]);
+// 0  }
+//   return returnArr
+// };
+
+// concat([1, 2, 3], [4, 5], [6, 7])
+// ➞ [1, 2, 3, 4, 5, 6, 7]
+
+const changeEnough = function (change, amountDue) {
+  let totalSumInPocket = 0;
+  if (change.length === 0) {
+    return false;
   } else {
-    //want to take an object,
-    //FOR EACH KVPAIR,  we want to create another array
-    // where the first element = key and every other element = values
-    for (key in objToConvert) {
-      // console.log(Object.keys(objToConvert).length)
-      let arrayToAdd = [key, objToConvert[key]];
-      reutrnArray.push(arrayToAdd);
+    //want to check if we have enough pocket change for an item
+    for (let i = 0; i < change.length; i++) {
+      switch (i) {
+        case 0:
+          // console.log('0')
+          //this is the quarters
+          let valOfQuarters = change[i] * 25;
+          i++;
+          // console.log('valOfQuarters',valOfQuarters)
+          totalSumInPocket += valOfQuarters;
+
+        case 1:
+          // console.log('1')
+          //this is the quarters
+          let valOfDimes = change[i] * 10;
+          i++;
+          // console.log('valOfDimes',valOfDimes)
+          totalSumInPocket += valOfDimes;
+
+        case 2:
+          // console.log('2')
+          //this is the quarters
+          let valOfNickels = change[i] * 5;
+          i++;
+          // console.log('valOfNickels',valOfNickels)
+          totalSumInPocket += valOfNickels;
+
+        case 3:
+          // console.log('3')
+          //this is the quarters
+          let valOfPennies = change[i] * 1;
+          i++;
+          // console.log('valOfPennies',valOfPennies)
+          totalSumInPocket += valOfPennies;
+      }
     }
-    return reutrnArray;
+
+    // console.log("totalSumInPocket", totalSumInPocket);
+    if (totalSumInPocket >= (amountDue * 100)) {
+      //you can afford the item
+      return true;
+    } else {
+      //you cant
+      return false;
+    }
   }
 };
 
-console.log(toArray({ a: 1, b: 2 }));
-console.log(toArray({ shrimp: 15, tots: 12 }));
+console.log(changeEnough(([30, 40, 20, 5], 12.55)));
+console.log((30*25)+(40*10)+(20*5)+(5*1))
+// Test.assertEquals(changeEnough([2, 100, 0, 0], 14.11), false);
+// Test.assertEquals(changeEnough([0, 0, 20, 5], 0.75), true);
+// Test.assertEquals(changeEnough([30, 40, 20, 5], 12.55), true);
+// Test.assertEquals(changeEnough([10, 0, 0, 50], 13.85), false);
+// Test.assertEquals(changeEnough([1, 0, 5, 219], 19.99), false);
+// Test.assertEquals(changeEnough([1, 0, 2555, 219], 127.75), true);
+// Test.assertEquals(changeEnough([1, 335, 0, 219], 35.21), true);
