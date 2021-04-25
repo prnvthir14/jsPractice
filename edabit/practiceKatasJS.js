@@ -522,13 +522,23 @@
 
 // console.log(triangle(215));
 
-const derivative = function (b, m) {
-  let derivativeValue = 0;
-  //f(x)=x^b
+// const derivative = function (b, m) {
+//   let derivativeValue = 0;
+//   //f(x)=x^b
 
-  //need to differenatate f(x)
-  derivativeValue = b * m ** (b - 1);
+//   //need to differenatate f(x)
+//   derivativeValue = b * m ** (b - 1);
 
-  return derivativeValue;
+//   return derivativeValue;
+// };
+// console.log(derivative(4, -3));
+
+const tetra = (n) => {
+  //    n = [1, 2, 3,  4,  5,  6,  7,  8,   9,   10]
+  // varl = [1, 4, 10, 20, 35, 56, 84, 120, 165, 220]
+  // algo = [n ,2n,3n+1,5n, 7n, 9n+2, 12n  ]
+
+  return (n * (n + 1) * (n + 2)) / 6;
 };
-console.log(derivative(4, -3));
+
+console.log(tetra(6))
