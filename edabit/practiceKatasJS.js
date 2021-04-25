@@ -466,10 +466,25 @@
 
 // console.log(tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]));
 
-function bitwiseAND(n1, n2) {
-  console.log(toString(2));
+// function bitwiseAND(n1, n2) {
+//   console.log(toString(2));
+// }
+
+// bitwiseAND(7,12)
+// // console.log(bitwiseAND(7,12))
+
+function concat(...args) {
+  let x = [...args];
+
+
+  let y = [];
+
+  for (let i = 0; i < x.length; i++) {
+    for (let j = 0; j < x[i].length; j++) {
+      y.push(x[i][j]);
+    }
+  }
+  return y;
 }
 
-bitwiseAND(7,12)
-// console.log(bitwiseAND(7,12))
-
+console.log(concat([1, 2], [3, 4]));
