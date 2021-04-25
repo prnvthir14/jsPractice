@@ -473,18 +473,33 @@
 // bitwiseAND(7,12)
 // // console.log(bitwiseAND(7,12))
 
-function concat(...args) {
-  let x = [...args];
+// function concat(...args) {
+//   let x = [...args];
+
+//   let y = [];
+
+//   for (let i = 0; i < x.length; i++) {
+//     for (let j = 0; j < x[i].length; j++) {
+//       y.push(x[i][j]);
+//     }
+//   }
+//   return y;
+// }
+
+// console.log(concat([1, 2], [3, 4]));
+
+// const isFirstSuperior = function (arr1, arr2) {
+//   for (let i = 0; i < arr1.length; i++) {
+//     if (arr1[i] > arr2[i]) {
+//       return true;
+//     }
+//   }
+//   return false;
+// };
+
+// console.log(
+//   isFirstSuperior(isFirstSuperior([true, 10, "zebra"], [true, 10, "zebra"]))
+// );
+// Test.assertEquals(isFirstSuperior([true, 10, 'zebra'], [true, 10, 'zebra']), false)
 
 
-  let y = [];
-
-  for (let i = 0; i < x.length; i++) {
-    for (let j = 0; j < x[i].length; j++) {
-      y.push(x[i][j]);
-    }
-  }
-  return y;
-}
-
-console.log(concat([1, 2], [3, 4]));
