@@ -533,12 +533,24 @@
 // };
 // console.log(derivative(4, -3));
 
-const tetra = (n) => {
-  //    n = [1, 2, 3,  4,  5,  6,  7,  8,   9,   10]
-  // varl = [1, 4, 10, 20, 35, 56, 84, 120, 165, 220]
-  // algo = [n ,2n,3n+1,5n, 7n, 9n+2, 12n  ]
+// const tetra = (n) => {
+//   //    n = [1, 2, 3,  4,  5,  6,  7,  8,   9,   10]
+//   // varl = [1, 4, 10, 20, 35, 56, 84, 120, 165, 220]
+//   // algo = [n ,2n,3n+1,5n, 7n, 9n+2, 12n  ]
 
-  return (n * (n + 1) * (n + 2)) / 6;
-};
+//   return (n * (n + 1) * (n + 2)) / 6;
+// };
 
-console.log(tetra(6))
+// console.log(tetra(6))
+
+// const arrayOfMultiples = (num, length) => {
+//   let returnArr = [];
+
+//   for (let i = 0; i < length; i++) {
+//     returnArr.push(num*(i+1));
+//   }
+
+//   return returnArr;
+// };
+
+// console.log(arrayOfMultiples(17,6))
