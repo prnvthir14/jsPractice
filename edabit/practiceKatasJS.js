@@ -502,4 +502,22 @@
 // );
 // Test.assertEquals(isFirstSuperior([true, 10, 'zebra'], [true, 10, 'zebra']), false)
 
+// This Triangular Number Sequence is generated from a pattern of dots that form a triangle. The first 5 numbers of the sequence, or dots, are:
 
+// const triangle = function (n) {
+//   //take n  {1, 2,   3,  4,    5,  6}
+//   //algo    {n, n+1, (n-1)n, 2(n+2), (n-2)n, 3(n+1)}
+//   //return  {1, 3,   6,  10,   15, 21}
+
+//   if (n === 1) {
+//     return 1;
+//   } else {
+//     if (n % 2 === 0) {
+//       return (n * (n + 1))/2;
+//     } else if (n % 2 === 1) {
+//       return n * (Math.round(n/2))
+//     }
+//   }
+// };
+
+// console.log(triangle(215));
