@@ -438,10 +438,31 @@
 
 // console.log(whichIsLarger(() => 5, () => 10))
 
-// function potatoes(str) {
-//   var patt1 = /potato/g;
+// function potatoes(str,search) {
+//   var patt1 = /search/g;
 //   var result = str.match(patt1);
 //   return result.length;
 // }
 
 // console.log(potatoes("potatoapple"));
+
+// Create a function that takes two arrays and insert the second array in the middle of the first array.
+
+const tuckIn = function (arr1, arr2) {
+
+  // let start = [[...arr1.splice(0)][0]];
+
+  let start = arr1[0];
+  let end = arr1[1];
+  // console.log("start", start);
+  // console.log("end", end);
+  // start.push(arr2);
+  // let end = [[...arr1]];
+  // console.log("end", end);
+  let returnArr = [start, ...arr2, end];
+
+
+  return returnArr;
+};
+
+console.log(tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]));
