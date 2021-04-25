@@ -554,3 +554,19 @@
 // };
 
 // console.log(arrayOfMultiples(17,6))
+
+const keysAndValues = (obj) => {
+  //get keys in 1 arr and values in another and both in the return arr
+
+  let keys = [];
+  let values = [];
+
+  for (let key in obj) {
+    keys.push(key);
+    values.push(obj[key]);
+  }
+
+  return [keys, values]
+};
+
+console.log(keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" }));
