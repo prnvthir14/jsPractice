@@ -423,17 +423,25 @@
 // Test.assertEquals(changeEnough([1, 0, 2555, 219], 127.75), true);
 // Test.assertEquals(changeEnough([1, 335, 0, 219], 35.21), true);
 
-const whichIsLarger = function (f, g) {
-  const resultFromF = f();
-  const resultFromG = g();
+// const whichIsLarger = function (f, g) {
+//   const resultFromF = f();
+//   const resultFromG = g();
 
-  if (resultFromF > resultFromG) {
-    return "f";
-  } else if (resultFromG > resultFromF) {
-    return "g";
-  } else {
-    return "neither";
-  }
-};
+//   if (resultFromF > resultFromG) {
+//     return "f";
+//   } else if (resultFromG > resultFromF) {
+//     return "g";
+//   } else {
+//     return "neither";
+//   }
+// };
 
-console.log(whichIsLarger(() => 5, () => 10))
+// console.log(whichIsLarger(() => 5, () => 10))
+
+// function potatoes(str) {
+//   var patt1 = /potato/g;
+//   var result = str.match(patt1);
+//   return result.length;
+// }
+
+// console.log(potatoes("potatoapple"));
