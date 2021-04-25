@@ -512,7 +512,7 @@
 //   if (n === 1) {
 //     return 1;
 //   } else {
-//     if (n % 2 === 0) {
+//     if (n % 2 === 0) {x
 //       return (n * (n + 1))/2;
 //     } else if (n % 2 === 1) {
 //       return n * (Math.round(n/2))
@@ -521,3 +521,14 @@
 // };
 
 // console.log(triangle(215));
+
+const derivative = function (b, m) {
+  let derivativeValue = 0;
+  //f(x)=x^b
+
+  //need to differenatate f(x)
+  derivativeValue = b * m ** (b - 1);
+
+  return derivativeValue;
+};
+console.log(derivative(4, -3));
