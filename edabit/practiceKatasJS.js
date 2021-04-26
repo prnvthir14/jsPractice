@@ -555,18 +555,62 @@
 
 // console.log(arrayOfMultiples(17,6))
 
-const keysAndValues = (obj) => {
-  //get keys in 1 arr and values in another and both in the return arr
+// const keysAndValues = (obj) => {
+//   //get keys in 1 arr and values in another and both in the return arr
 
-  let keys = [];
-  let values = [];
+//   let keys = [];
+//   let values = [];
 
+//   for (let key in obj) {
+//     keys.push(key);
+//     values.push(obj[key]);
+//   }
+
+//   return [keys, values]
+// };
+
+// console.log(keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" }));
+
+//Write a function that converts an object into an array of keys and values.
+
+const objectToArray = function (obj) {
+  //take obj, create subArray = key + val
+  //return array of all subArray
+  let subArray = [];
+  let reutrnArray = [];
   for (let key in obj) {
-    keys.push(key);
-    values.push(obj[key]);
+    // console.log(key)
+    subArray.push(key);
+    subArray.push(obj[key]);
+    reutrnArray.push(subArray);
   }
+  // console.log(subArray)
 
-  return [keys, values]
+  return reutrnArray;
 };
 
-console.log(keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" }));
+// console.log(objectToArray({
+//   D: 1,
+//   B: 2,
+//   C: 3
+// }))
+
+const intWithinBounds = (n, lower, upper) => {
+  console.log(n, lower, upper);
+  if (Number.isInteger(n)) {
+    if (Number(n) >= Number(lower) && Number(n) < Number(upper)) {
+      return true;
+    } else {
+      return false;
+    }
+  }else {
+    return false
+  }
+};
+
+console.log(intWithinBounds(4.5, 3, 8));
+
+// Test.assertEquals(intWithinBounds(4.5, 3, 8), false)
+// Test.assertEquals(intWithinBounds(6.3, 2, 10), false)
+// Test.assertEquals(intWithinBounds(0, 0, 1), true)
+// Test.assertEquals(intWithinBounds(7, 7, 12), true)
