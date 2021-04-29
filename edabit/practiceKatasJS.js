@@ -661,8 +661,32 @@ const checkForDigit7 = function (num) {
 // };
 // 10/15
 
-const sevenBoom = (arr) => {
-  return arr.join("").includes("7") ? "Boom" : "there is no 7";
+// const sevenBoom = (arr) => {
+//   return arr.join("").includes("7") ? "Boom" : "there is no 7";
+// };
+
+// console.log(sevenBoom([2, 55, 60, 99, 86]));
+
+// 23:06  -- 23:11
+const countBoomerangs = (arr) => {
+  //for every 3 digits in the arr, we need to check if it is a bomerang
+  // 1st - 0 1 2
+  // 2nd - 1 2 3
+  // 3rd - 2 3 4
+  let boomCount = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let testArr = [arr[i], arr[i + 1], arr[i + 2]];
+    //console.log(testArr);
+
+    if (
+      testArr.length === 3 &&
+      testArr[0] === testArr[2] &&
+      testArr[0] !== testArr[1]
+    ) {
+      boomCount++;
+    }
+  }
+  return boomCount;
 };
 
-console.log(sevenBoom([2, 55, 60, 99, 86]));
+console.log(countBoomerangs([9, 5, 9, 5, 1, 1, 1]));
