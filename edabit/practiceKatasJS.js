@@ -693,20 +693,148 @@ const checkForDigit7 = function (num) {
 
 //23:20--23:24
 
-const oddishOrEvenish = (num) => {
-  //conver num  to str
-  let numStr = JSON.stringify(num);
-  let numSum = 0;
-  for (let digit of numStr) {
-    // console.log(digit);
-    numSum += Number(digit);
+// const oddishOrEvenish = (num) => {
+//   //conver num  to str
+//   let numStr = JSON.stringify(num);
+//   let numSum = 0;
+//   for (let digit of numStr) {
+//     // console.log(digit);
+//     numSum += Number(digit);
+//   }
+
+//   if (numSum % 2 === 1) {
+//     return "Oddish";
+//   } else {
+//     return "Evenish";
+//   }
+// };
+
+// console.log(oddishOrEvenish(4433));
+
+// 23.28 - 23.54
+const sortArray = (arr) => {
+  //arr only contains int
+  //no duplicates
+  //sort in ascending order
+
+  let retArr = [];
+
+  //need to loop through arr
+  let loopStatus = true;
+  let i = 0;
+  while (loopStatus) {
+    if (retArr.length === 0) {
+      //no number in return array, so push the 1st number
+      retArr.push(arr[i]);
+    } else {
+      // we have a number or numbers in the array already
+      // and need to check if this number needs to go before or after it
+      // last num in retArr = retArr[lastVal]
+      let lastValIndex = retArr.length - 1;
+
+      //1st num in retArr = retArr[0]
+      if (arr[i] < retArr[0]) {
+        //put it at the start of the array
+        retArr.unshift(arr[i]);
+      } else if (arr[i] > retArr[lastValIndex]) {
+        //add it to the end of the array if its greater than the
+        retArr.push(arr[i]);
+      } else {
+        /* now is the tricky part;
+        the value arr[i] is somewhere between the first and last digits in our array
+        arr[i] = 1
+        retArr = [-5,2]
+        in this situation, 1 needs to come between -5 and 2
+        thin you want to take the number, compare it to index 1, if it is larger, we inser, otherwise, we spread and insert at that inex?
+        use map fn? 
+
+        */
+        for (let val of retArr) {
+          console.log("hi", val, arr[i], i, retArr);
+          if (arr[i] < val) {
+            //if the current value is less than curent x; want to insert
+            let spliceAt = retArr.indexOf(val);
+            retArr.splice(spliceAt, 0, arr[i]);
+          }
+
+          // retArr.map((x)=>{
+          //   if (arr[i] < x){
+          //     //if the current value is less than curent x; want to insert
+
+          //   }
+          //  })
+        }
+        // let lastVal = retArr.length - 1
+        // last num in retArr = retArr[lastVal]
+      }
+
+      //pushed to array and now we check if loop executes again
+      if (i <= arr.length) {
+        i++;
+        //on to next iteration
+      } else {
+        //end of loop, set status to false
+        loopStatus = false;
+      }
+    }
   }
 
-  if (numSum % 2 === 1) {
-    return "Oddish";
-  } else {
-    return "Evenish";
+  for (let val of arr) {
+    console.log("val", val);
+    //push first element to arr
+    retArr.push(val);
   }
+  return retArr;
 };
 
-console.log(oddishOrEvenish(4433));
+// console.log(sortArray([2, -5, 1, 4, 7, 8]));
+
+// Write the function that takes three dimensions of a brick: height(a), width(b) and depth(c) and returns true if this brick can fit into a hole with the width(w) and height(h).
+// 12.13
+// const doesBrickFit = function (a, b, c, w, h) {
+//   //get input array with 5 elements;
+//   //1st 3 are : height(a), width(b) and depth(c)
+//   //last 2 are : hole with the width(w) and height(h).
+
+//   //does the brick fit?
+//   //does the brick fit?
+//   let brickDimensions = a * b * c;
+//   let holeDimensions = w * h;
+
+//   if (holeDimensions >= brickDimensions ) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// // console.log((doesBrickFit(1,1,1, 1,1))) //returns true, brick = 1; hole = 1;
+// console.log((doesBrickFit(1,2,1, 1,1))) //returns true, brick = 1; hole = 1;
+
+// Test.assertEquals(doesBrickFit(2,2,2, 1,2), false)
+
+// Test.assertEquals(doesBrickFit(1,1,1, 1,1), true, "cube into square") -
+// Test.assertEquals(doesBrickFit(1,2,1, 1,1), true) - brick = 2; hole = 1;
+// Test.assertEquals(doesBrickFit(1,2,2, 1,1), false) - brick = 1; hole = 1;
+// Test.assertEquals(doesBrickFit(1,2,2, 1,2), true) - brick = 1; hole = 1;
+// Test.assertEquals(doesBrickFit(1,2,2, 2,1), true)- brick = 1; hole = 1;
+// Test.assertEquals(doesBrickFit(2,2,2, 1,2), false)- brick = 1; hole = 1;
+
+// Create a function that takes two dates and returns the number of days between the first and second date.
+// 12.40
+const getDays = (date1, date2) => {
+
+  let day = 60*60*24*1000
+
+  console.log('date1',date1)
+  console.log('date2',date2)
+
+  const dayDiff = Math.round(Math.abs((date2-date1)/day))
+  return dayDiff
+
+};
+
+console.log(getDays(
+  new Date("July 20, 2019"),
+  new Date("July 30, 2020")
+));
