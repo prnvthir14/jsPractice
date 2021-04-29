@@ -1,6 +1,5 @@
 /* import '' from '' */
 
-
 body {
   background-color: lightblue;
 }
@@ -11,10 +10,35 @@ h2 {
 }
 
 .divPs {
-display: flex;
-flex-direction: column;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  
+.divPs > h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  background-color: whitesmoke;
+  width: fit-content;
+}
 
+.divPs > span button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: pink;
+  background-color: black;
+  width: fit-content;
+}
+
+
+.divPs > span button:hover{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: pink;
+  background-color: whitesmoke;
+  width: fit-content;
 }

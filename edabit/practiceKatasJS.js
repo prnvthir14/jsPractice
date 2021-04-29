@@ -573,21 +573,21 @@
 
 //Write a function that converts an object into an array of keys and values.
 
-const objectToArray = function (obj) {
-  //take obj, create subArray = key + val
-  //return array of all subArray
-  let subArray = [];
-  let reutrnArray = [];
-  for (let key in obj) {
-    // console.log(key)
-    subArray.push(key);
-    subArray.push(obj[key]);
-    reutrnArray.push(subArray);
-  }
-  // console.log(subArray)
+// const objectToArray = function (obj) {
+//   //take obj, create subArray = key + val
+//   //return array of all subArray
+//   let subArray = [];
+//   let reutrnArray = [];
+//   for (let key in obj) {
+//     // console.log(key)
+//     subArray.push(key);
+//     subArray.push(obj[key]);
+//     reutrnArray.push(subArray);
+//   }
+//   // console.log(subArray)
 
-  return reutrnArray;
-};
+//   return reutrnArray;
+// };
 
 // console.log(objectToArray({
 //   D: 1,
@@ -595,22 +595,74 @@ const objectToArray = function (obj) {
 //   C: 3
 // }))
 
-const intWithinBounds = (n, lower, upper) => {
-  console.log(n, lower, upper);
-  if (Number.isInteger(n)) {
-    if (Number(n) >= Number(lower) && Number(n) < Number(upper)) {
-      return true;
-    } else {
-      return false;
-    }
-  }else {
-    return false
-  }
-};
+// const intWithinBounds = (n, lower, upper) => {
+//   console.log(n, lower, upper);
+//   if (Number.isInteger(n)) {
+//     if (Number(n) >= Number(lower) && Number(n) < Number(upper)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }else {
+//     return false
+//   }
+// };
 
-console.log(intWithinBounds(4.5, 3, 8));
+// console.log(intWithinBounds(4.5, 3, 8));
 
 // Test.assertEquals(intWithinBounds(4.5, 3, 8), false)
 // Test.assertEquals(intWithinBounds(6.3, 2, 10), false)
 // Test.assertEquals(intWithinBounds(0, 0, 1), true)
 // Test.assertEquals(intWithinBounds(7, 7, 12), true)
+
+// const possibleBonus = (a, b) => {
+//   //a -- you
+
+//   if (a + 6 < b) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".
+
+//need 2 functions, 1 will check for the presence of the digit and if that is true, we will continue in the 2nd function and return said digit
+
+const checkForDigit7 = function (num) {
+  //looking for num 7
+  // should return true for all these cases
+
+  let numString = JSON.stringify(num);
+  // console.log(numString);
+
+  for (let char of numString) {
+    if (char === "7") {
+      return true;
+    }
+  }
+  return false;
+};
+
+// num = 7;
+// num = 17;
+// num = 72;
+// num = 172;
+
+// const sevenBoom = function (arr) {
+//   for (let digit of arr) {
+//     // console.log(digit);
+
+//     if (checkForDigit7(digit)) {
+//       return "Boom!";
+//     }
+//   }
+//   return "there is no 7 in the array";
+// };
+// 10/15
+
+const sevenBoom = (arr) => {
+  return arr.join("").includes("7") ? "Boom" : "there is no 7";
+};
+
+console.log(sevenBoom([2, 55, 60, 99, 86]));
