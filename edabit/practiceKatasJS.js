@@ -884,29 +884,56 @@ const getLength = function (arr) {
 };*/
 //mthd 2; recursion
 
-const getLength = function (arr) {
-  //initialize count
-  let count = 0;
+// const getLength = function (arr) {
+//   //initialize count
+//   let count = 0;
 
-  //loop throug array, for each item, check if it is an array;
-  //if true, call getLength with the current Item
-  // else count ++
+//   //loop throug array, for each item, check if it is an array;
+//   //if true, call getLength with the current Item
+//   // else count ++
 
-  arr.forEach((item) => {
-    //loop throug array, for each item, check if it is an array;
-    if (Array.isArray(item)) {
-      //if true, call function recursively and add value to count
-      count += getLength(item);
-    } else {
-      //else is not and is 1 number
-      count++;
-    }
-  });
+//   arr.forEach((item) => {
+//     //loop throug array, for each item, check if it is an array;
+//     if (Array.isArray(item)) {
+//       //if true, call function recursively and add value to count
+//       count += getLength(item);
+//     } else {
+//       //else is not and is 1 number
+//       count++;
+//     }
+//   });
 
-  return count;
-};
+//   return count;
+// };
 
-console.log(getLength([1, [2, [3, [4, [5, 6]]]]]));
+// console.log(getLength([1, [2, [3, [4, [5, 6]]]]]));
 
-console.log(getLength([1, [2, [3, 4]]]));
 // console.log(getLength([1, [2, [3, 4]]]));
+// console.log(getLength([1, [2, [3, 4]]]));
+
+// const objectToArray = function (obj) {
+//   if (Object.keys(obj).length === 0) {
+//     return "EMPTY INPUT";
+//   } else {
+//     let retArr = [];
+
+//     for (let key in obj) {
+//       //console.log(typeof key);
+//       //item = key
+//       //value = obj[item]
+//       let subArr = [key.toString(), obj[key]];
+
+//       retArr.push(subArr);
+//     }
+
+//     return retArr;
+//   }
+// };
+
+// console.log(
+//   objectToArray({
+//     likes: 2,
+//     dislikes: 3,
+//     followers: 10,
+//   })
+// );
