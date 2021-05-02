@@ -937,3 +937,29 @@ const getLength = function (arr) {
 //     followers: 10,
 //   })
 // );
+//15.20
+const addName = function (obj, name, value) {
+  // mthd 1
+  // let retObj = {};
+
+  // //if obj is empty
+  // if (Object.keys(obj).length === 0) {
+  //   //just return new obj with key=name, value = value
+  //   retObj[name] = value;
+
+  //   return retObj;
+  // } else {
+  //   //there is an entry in obj and we want to add the name and values passed to obj
+  //   obj[name] = value;
+
+  //   return obj;
+  // }
+
+  //mthd 2
+
+  return { ...obj, [name]:value}
+
+
+};
+
+console.log(addName({}, "Brutus", 300));
