@@ -821,20 +821,92 @@ const sortArray = (arr) => {
 // Test.assertEquals(doesBrickFit(2,2,2, 1,2), false)- brick = 1; hole = 1;
 
 // Create a function that takes two dates and returns the number of days between the first and second date.
-// 12.40
-const getDays = (date1, date2) => {
+// // 12.40
+// const getDays = (date1, date2) => {
 
-  let day = 60*60*24*1000
+//   let day = 60*60*24*1000
 
-  console.log('date1',date1)
-  console.log('date2',date2)
+//   console.log('date1',date1)
+//   console.log('date2',date2)
 
-  const dayDiff = Math.round(Math.abs((date2-date1)/day))
-  return dayDiff
+//   const dayDiff = Math.round(Math.abs((date2-date1)/day))
+//   return dayDiff
 
+// };
+
+// console.log(getDays(
+//   new Date("July 20, 2019"),
+//   new Date("July 30, 2020")
+// ));
+
+//20.02
+// const getLength = (arr) => {
+//   //easy way
+//   let chars = arr.join("");
+//   // console.log(chars);
+//   let countEl = 0;
+//   if (arr.length === 0) {
+//     return countEl
+//   } else {
+//     //array isnt empty
+//     for (let el of arr) {
+//       //console.log(el);
+//       //if el is not an array
+//       if (!Array.isArray(el)) {
+//         //add the element to our return
+//         countEl++;
+//       } else {
+//         for (let newEl of el) {
+//           countEl++;
+//         }
+//       }
+//     }
+
+//   }
+//   // for (let char of chars) {
+//   //   if (typeof char !== "," || " ") {
+//   //     countEl++;
+//   //   }
+//   // }
+//   return countEl;
+// };
+/*
+const getLength = function (arr) {
+  //mthd 1// let defaultDepth = Infinity;
+  // let length = 0;
+  // let flatArr = arr.flat(defaultDepth);
+
+  // for (let i = 0; i < flatArr.length; i++) {
+  //   length++;
+  // }
+
+  // return length;
+};*/
+//mthd 2; recursion
+
+const getLength = function (arr) {
+  //initialize count
+  let count = 0;
+
+  //loop throug array, for each item, check if it is an array;
+  //if true, call getLength with the current Item
+  // else count ++
+
+  arr.forEach((item) => {
+    //loop throug array, for each item, check if it is an array;
+    if (Array.isArray(item)) {
+      //if true, call function recursively and add value to count
+      count += getLength(item);
+    } else {
+      //else is not and is 1 number
+      count++;
+    }
+  });
+
+  return count;
 };
 
-console.log(getDays(
-  new Date("July 20, 2019"),
-  new Date("July 30, 2020")
-));
+console.log(getLength([1, [2, [3, [4, [5, 6]]]]]));
+
+console.log(getLength([1, [2, [3, 4]]]));
+// console.log(getLength([1, [2, [3, 4]]]));
