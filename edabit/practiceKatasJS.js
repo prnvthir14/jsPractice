@@ -1290,7 +1290,7 @@ Create a function that takes a number num and returns its double factorial.
 Assume all input values are greater than or equal to -1.
 Try to solve it with recursion.
 Double factorial is not the same as factorial * 2.
-*/
+16.25*/
 
 const doubleFactorial = function (num, dblFac = 1) {
   //break condition
@@ -1310,3 +1310,79 @@ const doubleFactorial = function (num, dblFac = 1) {
 5  num = 0 dblFaci = 1 dblFacend =      ---------------stop
  
 */
+
+/*
+Arrays can be mixed with various types. Your task for this challenge is to sum all the number elements in the given array. Create a function that takes an array and returns the sum of all numbers in the array.
+
+*/
+
+// const numerSum = function (arr) {
+//   let sum = 0;
+
+//   for (let item of arr) {
+//     if (typeof item === "number") {
+//       sum += item;
+//     }
+//   }
+
+//   return sum;
+// };
+
+// const numerSumRecursion = function (arr, sum = 0) {
+
+//   if ()
+
+//   for (let item of arr) {
+//     if (typeof item === "number") {
+//       sum += item;
+//     }
+//   }
+
+//   return sum;
+// };
+
+// const allTruthy = function (...args) {
+//   for (let item of args) {
+//     //console.log(item);
+//     if (typeof item === "function" ) {
+//       return true;``
+//     } else if (item !== true) {
+//       console.log("FALSE");
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+// console.log(allTruthy(Infinity, 92347238467.219378, "Hello World"));
+// [];
+// console.log(typeof Boolean, typeof Number, typeof Object, typeof String);
+
+/*reverse the number 1750
+
+*/
+
+// function rev(n) {
+//   let revNum = 0;
+
+// if (n > 0) {
+//   while (n > 0) {
+//     revNum = revNum * 10 + (n % 10);
+
+//     n = Math.floor(n / 10);
+//   }
+
+//   return JSON.stringify(revNum);
+// } else {
+//   let invN = n * -1;
+//   while (invN > 0) {
+//     revNum = revNum * 10 + (n % 10);
+
+//     invN = Math.floor(invN / 10);
+//   }
+
+//   return revNum;
+// }
+// }
+
+// console.log(rev(5121))
