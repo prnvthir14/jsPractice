@@ -1214,27 +1214,99 @@ nothing about not using sort
 /* 14.35
 
 takes a function, with parameters = array and sortType
-
+14.40
 
 */
 
-function ascDesNone(arr, str) {
-  //sort desc
-  switch (str) {
-    case "Asc":
-      //sort asc
-      return arr.sort((a, b) => {
-        return a - b;
-      });
+// function ascDesNone(arr, str) {
+//   //sort desc
+//   switch (str) {
+//     case "Asc":
+//       //sort asc
+//       return arr.sort((a, b) => {
+//         return a - b;
+//       });
 
-    case "Des":
-      //sort asc
-      return arr.sort((a, b) => {
-        return b - a;
-      });
+//     case "Des":
+//       //sort asc
+//       return arr.sort((a, b) => {
+//         return b - a;
+//       });
 
-    case "None" || "":
-      //sort asc
-      return arr;
+//     case "None" || "":
+//       //sort asc
+//       return arr;
+//   }
+// }
+
+// const areaOfCountry = function (name, area) {
+//   let worldArea = 148940000
+
+//   let percentage = (area/worldArea * 100)
+
+//   let percentRounded = Number(percentage.toFixed(2))
+
+//   return `${name} is ${percentRounded}% of the world's landmass`
+
+// }
+
+// console.log(areaOfCountry("Russia", 17098242) )
+
+/* 15.50
+Create a function that squares every digit of a number.
+squareDigits(9119) ➞ 811181
+
+squareDigits(2483) ➞ 416649
+
+squareDigits(3212) ➞ 9414
+16.12 -7
+*/
+
+// const squareDigits = function (num) {
+//   //get num
+//   let numStr = JSON.stringify(num)
+
+//   let arr = []
+
+//   // console.log( numStr);
+//   for (let n of numStr) {
+//     arr.push(Number(n))
+//   }
+//   console.log( arr);
+
+//   let arr2 = arr.map(x => x*x)
+
+//   let numToReturn = arr2.join('')
+
+//   return Number(numToReturn)
+
+// };
+
+// console.log(squareDigits(2483));
+
+/*
+16.15
+Create a function that takes a number num and returns its double factorial.
+Assume all input values are greater than or equal to -1.
+Try to solve it with recursion.
+Double factorial is not the same as factorial * 2.
+*/
+
+const doubleFactorial = function (num, dblFac = 1) {
+  //break condition
+  if (num <= 0) {
+    return dblFac;
   }
-}
+
+  return doubleFactorial(num - 2, dblFac * num);
+};
+
+/* doubleFactorial(7)
+
+1  num = 7 dblFaci = 1 dblFacend = 7  
+2  num = 5 dblFaci = 7 dblFacend = 35
+3  num = 3 dblFaci = 35 dblFacend = 35*3 = 105 
+4  num = 1 dblFaci = 105 dblFacend = 105 
+5  num = 0 dblFaci = 1 dblFacend =      ---------------stop
+ 
+*/
