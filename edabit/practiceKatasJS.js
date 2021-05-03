@@ -1130,42 +1130,111 @@ numPaths = 24
 13.56
 */
 
-const paths = function (n, numPaths = 1) {
-  // let numPaths = 1;
-  //attempt 1; for loop
-  // for (let i = n; i > 0; i--) {
-  //   //start i = n, while i > 0;
+// const paths = function (n, numPaths = 1) {
+//   // let numPaths = 1;
+//   //attempt 1; for loop
+//   // for (let i = n; i > 0; i--) {
+//   //   //start i = n, while i > 0;
 
-  //   numPaths *= i;
-  // }
+//   //   numPaths *= i;
+//   // }
 
-  // console.log('numPaths', numPaths)
-  // return numPaths;
+//   // console.log('numPaths', numPaths)
+//   // return numPaths;
 
-  ////attempt 2: recursion
+//   ////attempt 2: recursion
 
-  //first state break condition
-  if (n <= 0) {
-    return numPaths;
+//   //first state break condition
+//   if (n <= 0) {
+//     return numPaths;
+//   }
+//   return paths(n - 1, numPaths * n);
+// };
+
+// const pathsRecursive = function (n, numToReturn = 1) {
+//   //cant set an inital variable at the start like usual becuase since we are calling this recusrisvely,
+//   //that value will belong to a given call () and return undefined
+//   //instead, we pass our productTracker (numToReturn) as a parameter to our function and update it till we break and
+//   //return said value
+
+//   //break case
+//   if (n <= 0) {
+//     return numToReturn;
+//   }
+
+//   //recursion here with 2 params,
+//   // n-1: next iteration to be called
+//   //numToReturn*n which updates our return value with the product of the n * numToReturn for the given iteration.
+//   return pathsRecursive(n - 1, numToReturn * n);
+// };
+
+// console.log(pathsRecursive(9));
+
+/*14.04
+find the 2nd largest number in an array
+nothing about not using sort
+14.13
+/*trying spread method
+
+*/
+
+// const secondLargest = (arr) => {
+//   //mthd 1, using sort and chaing input array
+//   arr.sort((a, b) => {
+//     return b - a;
+//   });
+//   console.log("arr", arr);
+//   // console.log("arr2", arr2);
+
+//   return arr[1];
+// };
+
+// const secondLargestSpread = (arr) => {
+//   //mthd 1, using sort and chaing input array
+//   // arr.sort((a, b) => {
+//   //   return b - a;
+//   // });
+//   // console.log("arr", arr);
+//   // // console.log("arr2", arr2);
+
+//   // return arr[1];
+
+//   let arr2 = [
+//     ...arr.sort((a, b) => {
+//       return b - a;
+//     }),
+//   ];
+
+//   console.log("arr", arr);
+//   console.log("arr2", arr2);
+// };
+
+// console.log(secondLargestSpread([10, 40, 30, 20, 50]));
+
+/* 14.35
+
+takes a function, with parameters = array and sortType
+
+
+*/
+
+function ascDesNone(arr, str) {
+  //sort desc
+  switch (str) {
+    case "Asc":
+      //sort asc
+      return arr.sort((a, b) => {
+        return a - b;
+      });
+
+    case "Des":
+      //sort asc
+      return arr.sort((a, b) => {
+        return b - a;
+      });
+
+    case "None" || "":
+      //sort asc
+      return arr;
   }
-  return paths(n - 1, numPaths * n);
-};
-
-const pathsRecursive = function (n, numToReturn = 1) {
-  //cant set an inital variable at the start like usual becuase since we are calling this recusrisvely,
-  //that value will belong to a given call () and return undefined
-  //instead, we pass our productTracker (numToReturn) as a parameter to our function and update it till we break and
-  //return said value
-
-  //break case
-  if (n <= 0) {
-    return numToReturn;
-  }
-
-  //recursion here with 2 params,
-  // n-1: next iteration to be called
-  //numToReturn*n which updates our return value with the product of the n * numToReturn for the given iteration.
-  return pathsRecursive(n - 1, numToReturn * n);
-};
-
-console.log(pathsRecursive(9));
+}
