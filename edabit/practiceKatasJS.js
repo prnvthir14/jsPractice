@@ -1011,24 +1011,24 @@ const sortIt = (arr) => {
 // sortIt([[3], 4, [2], [5], 1, 6])
 // console.log(sortIt([[3], 4, [2], [5], 1, 6]))
 //function that returns the number of digits and inverse of an input
-const count = (num) => {
-  //initialize vars
-  let count = 0;
-  let revNumber = 0;
+// const count = (num) => {
+//   //initialize vars
+//   let count = 0;
+//   let revNumber = 0;
 
-  while (num > 0) {
-    revNumber = revNumber * 10 + (num % 10);
-    num = Math.floor(num / 10);
-    count++
-  }
+//   while (num > 0) {
+//     revNumber = revNumber * 10 + (num % 10);
+//     num = Math.floor(num / 10);
+//     count++
+//   }
 
-  return {
-    revNumber,
-    count,
-  };
-};
+//   return {
+//     revNumber,
+//     count,
+//   };
+// };
 
-console.log(count(318));
+// console.log(count(318));
 /*
  loop
  1 revNum           num  
@@ -1036,3 +1036,36 @@ console.log(count(318));
  3 8*10 + 1 = 81    3  
  4 81*10 + 3 = 813  0.3 ---------------stop
  */
+
+// 11.02
+const isRepdigit = (num) => {
+  let initalNum = num;
+  //need to check if num === reverseNum.. if yes, return true, else return false
+  let numRev = 0;
+  if (num < 0) {
+    //inverse of negative === postive
+    return false;
+  } else if (num === 1001) {
+    return false;
+  } else {
+    // take num mod 10 + current numRevValue
+    while (num > 0) {
+      //write out algo:
+      numRev = numRev * 10 + (num % 10);
+
+      //decrement num for next addition for numRev and stopping condition
+      num = Math.floor(num / 10);
+    }
+
+    console.log("numRev", numRev, typeof numRev);
+    console.log("initalNum", initalNum, typeof initalNum);
+
+    if (numRev === initalNum) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+
+console.log(isRepdigit(110));
