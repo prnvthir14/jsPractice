@@ -1067,31 +1067,58 @@ const sortIt = (arr) => {
 
 // console.log(isRepdigit(110));
 
-function flatten(arr) {
-  arr2 = [];
+// function flatten(arr) {
+//   arr2 = [];
 
-  //need to loop through arr, for each element, if it is an array, call flatten on said element,
+//   //need to loop through arr, for each element, if it is an array, call flatten on said element,
+//   //otherwise, just add it to the array
+//   arr.forEach((item) => {
+//     if (Array.isArray(item)) {
+//       // console.log("hi");
+//       for (let i = 0; i < item.length; i++) {
+//         arr2.push(item[i]);
+//       }
+//     } else {
+//       arr2.push(item);
+//     }
+//   });
 
-  //otherwise, just add it to the array
+//   return arr2;
+// }
 
-  arr.forEach((item) => {
-    if (Array.isArray(item)) {
-      // console.log("hi");
+// console.log(
+//   flatten([
+//     [1, 2],
+//     [3, 4],
+//   ])
+// );
 
-      for (let i = 0; i < item.length; i++) {
-        arr2.push(item[i]);
-      }
-    } else {
-      arr2.push(item);
-    }
-  });
+// function checkEquals(arr1, arr2) {
+//   //cant do this because references are different
+//   //cant compare 2 arrays this way
+//   // if (arr1 === arr2) {
+//   //   return true;
+//   // } else {
+//   //   return false;
+//   // }
 
-  return arr2;
-}
+//   //need to loop through and compare actual values
+//   //since we are comparing equality, assume all arr1, arr2 will be of same length
 
-console.log(
-  flatten([
-    [1, 2],
-    [3, 4],
-  ])
-);
+//   if (arr1.length === arr2.length) {
+//     for (let i = 0; i < arr1.length; i++) {
+//       if (arr1[i] !== arr2[i]) {
+//         //if any value in arr1 !== the corresponding val in arr 2,
+//         return false;
+//       }
+//     }
+//     //
+//     return true;
+//   }
+// }
+
+// console.log(checkEquals([1, 2], [1, 2]));
+// console.log(checkEquals([1, 2], [1, 3]))        //false
+// console.log(checkEquals([1, 2], [1, 2]))        //true
+// console.log(checkEquals([4, 5, 6], [4, 5, 6]))  //true
+// console.log(checkEquals([4, 7, 6], [4, 5, 6]))  //false
