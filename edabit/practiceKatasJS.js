@@ -938,28 +938,101 @@ const getLength = function (arr) {
 //   })
 // );
 //15.20
-const addName = function (obj, name, value) {
-  // mthd 1
-  // let retObj = {};
+// const addName = function (obj, name, value) {
+//   // mthd 1
+//   // let retObj = {};
 
-  // //if obj is empty
-  // if (Object.keys(obj).length === 0) {
-  //   //just return new obj with key=name, value = value
-  //   retObj[name] = value;
+//   // //if obj is empty
+//   // if (Object.keys(obj).length === 0) {
+//   //   //just return new obj with key=name, value = value
+//   //   retObj[name] = value;
 
-  //   return retObj;
-  // } else {
-  //   //there is an entry in obj and we want to add the name and values passed to obj
-  //   obj[name] = value;
+//   //   return retObj;
+//   // } else {
+//   //   //there is an entry in obj and we want to add the name and values passed to obj
+//   //   obj[name] = value;
 
-  //   return obj;
-  // }
+//   //   return obj;
+//   // }
 
-  //mthd 2
+//   //mthd 2
 
-  return { ...obj, [name]:value}
+//   return { ...obj, [name]:value}
 
+// };
 
+// console.log(addName({}, "Brutus", 300));
+
+// class OnesThreesNines {
+//   constructor(num) {
+//     this.num = Number(num);
+//   }
+
+//   //need three getters
+//   get ones() {
+//     return this.numOfOnes();
+//   }
+
+//   get threes() {
+//     return this.numOfThrees();
+//   }
+//   get nines() {
+//     return this.numOfNines();
+//   }
+
+//   //methods
+//   numOfOnes(num) {
+//     return Math.floor(num / 1);
+//   }
+
+//   //methods
+//   numOfThrees(num) {
+//     return Math.floor(num / 3);
+//   }
+//   //methods
+//   numOfNines(num) {
+//     return Math.floor(num / 9);
+//   }
+// }
+
+// let n1 = new OnesThreesNines(5)
+// console.log(n1.nines)
+
+const sortIt = (arr) => {
+  /*
+  get an arr
+  for each element, we need to first check if its a value or array,
+  if value, add it 
+  */
+  //
+  return arr.sort();
 };
 
-console.log(addName({}, "Brutus", 300));
+// sortIt([[3], 4, [2], [5], 1, 6])
+// console.log(sortIt([[3], 4, [2], [5], 1, 6]))
+//function that returns the number of digits and inverse of an input
+const count = (num) => {
+  //initialize vars
+  let count = 0;
+  let revNumber = 0;
+
+  while (num > 0) {
+    revNumber = revNumber * 10 + (num % 10);
+    num = Math.floor(num / 10);
+    count++
+  }
+
+  return {
+    revNumber,
+    count,
+  };
+};
+
+console.log(count(318));
+/*
+ loop
+ 1 revNum           num  
+ 2 8                31 
+ 3 8*10 + 1 = 81    3  
+ 4 81*10 + 3 = 813  0.3 ---------------stop
+ */
