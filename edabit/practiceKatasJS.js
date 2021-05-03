@@ -1038,34 +1038,60 @@ const sortIt = (arr) => {
  */
 
 // 11.02
-const isRepdigit = (num) => {
-  let initalNum = num;
-  //need to check if num === reverseNum.. if yes, return true, else return false
-  let numRev = 0;
-  if (num < 0) {
-    //inverse of negative === postive
-    return false;
-  } else if (num === 1001) {
-    return false;
-  } else {
-    // take num mod 10 + current numRevValue
-    while (num > 0) {
-      //write out algo:
-      numRev = numRev * 10 + (num % 10);
+// const isRepdigit = (num) => {
+//   let initalNum = num;
+//   //need to check if num === reverseNum.. if yes, return true, else return false
+//   let numRev = 0;
+//   if (num < 0) {
+//     //inverse of negative === postive
+//     return false;
+//   } else if (num === 1001) {
+//     return false;
+//   } else {
+//     // take num mod 10 + current numRevValue
+//     while (num > 0) {
+//       //write out algo:
+//       numRev = numRev * 10 + (num % 10);
 
-      //decrement num for next addition for numRev and stopping condition
-      num = Math.floor(num / 10);
-    }
+//       //decrement num for next addition for numRev and stopping condition
+//       num = Math.floor(num / 10);
+//     }
 
-    console.log("numRev", numRev, typeof numRev);
-    console.log("initalNum", initalNum, typeof initalNum);
+//     if (numRev === initalNum) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// };
 
-    if (numRev === initalNum) {
-      return true;
+// console.log(isRepdigit(110));
+
+function flatten(arr) {
+  arr2 = [];
+
+  //need to loop through arr, for each element, if it is an array, call flatten on said element,
+
+  //otherwise, just add it to the array
+
+  arr.forEach((item) => {
+    if (Array.isArray(item)) {
+      // console.log("hi");
+
+      for (let i = 0; i < item.length; i++) {
+        arr2.push(item[i]);
+      }
     } else {
-      return false;
+      arr2.push(item);
     }
-  }
-};
+  });
 
-console.log(isRepdigit(110));
+  return arr2;
+}
+
+console.log(
+  flatten([
+    [1, 2],
+    [3, 4],
+  ])
+);
