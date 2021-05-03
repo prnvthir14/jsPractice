@@ -1122,3 +1122,50 @@ const sortIt = (arr) => {
 // console.log(checkEquals([1, 2], [1, 2]))        //true
 // console.log(checkEquals([4, 5, 6], [4, 5, 6]))  //true
 // console.log(checkEquals([4, 7, 6], [4, 5, 6]))  //false
+
+/* 13.30
+n = 4
+4*3*2*1 = 4! = 24 
+numPaths = 24
+13.56
+*/
+
+const paths = function (n, numPaths = 1) {
+  // let numPaths = 1;
+  //attempt 1; for loop
+  // for (let i = n; i > 0; i--) {
+  //   //start i = n, while i > 0;
+
+  //   numPaths *= i;
+  // }
+
+  // console.log('numPaths', numPaths)
+  // return numPaths;
+
+  ////attempt 2: recursion
+
+  //first state break condition
+  if (n <= 0) {
+    return numPaths;
+  }
+  return paths(n - 1, numPaths * n);
+};
+
+const pathsRecursive = function (n, numToReturn = 1) {
+  //cant set an inital variable at the start like usual becuase since we are calling this recusrisvely,
+  //that value will belong to a given call () and return undefined
+  //instead, we pass our productTracker (numToReturn) as a parameter to our function and update it till we break and
+  //return said value
+
+  //break case
+  if (n <= 0) {
+    return numToReturn;
+  }
+
+  //recursion here with 2 params,
+  // n-1: next iteration to be called
+  //numToReturn*n which updates our return value with the product of the n * numToReturn for the given iteration.
+  return pathsRecursive(n - 1, numToReturn * n);
+};
+
+console.log(pathsRecursive(9));
