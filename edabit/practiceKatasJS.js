@@ -1403,38 +1403,102 @@ Arrays can be mixed with various types. Your task for this challenge is to sum a
 //   { name: "Martin", age: 16, budget: 2700 },
 // ]));
 
-const sumMissingNumbers = function (array) {
-  let missingSum = 0;
+// const sumMissingNumbers = function (array) {
+//   let missingSum = 0;
 
-  //have an array with numbers, lets sort it so that we can get the max and min vals in the array
-  //then generate a new array with ALL values within the
+//   //have an array with numbers, lets sort it so that we can get the max and min vals in the array
+//   //then generate a new array with ALL values within the
 
-  array.sort((a, b) => {
-    return a - b;
-  });
-  // console.log(array);
-  let maxRange = array[array.length - 1];
-  let minRange = array[0];
+//   array.sort((a, b) => {
+//     return a - b;
+//   });
+//   // console.log(array);
+//   let maxRange = array[array.length - 1];
+//   let minRange = array[0];
 
-  //create new list of range that excludes numbers in array
-  let completeArr = [];
+//   //create new list of range that excludes numbers in array
+//   let completeArr = [];
 
-  for (let i = minRange; i <= maxRange; i++) {
-    completeArr.push(i);
+//   for (let i = minRange; i <= maxRange; i++) {
+//     completeArr.push(i);
+//   }
+
+//   // console.log(array);
+
+//   let x = completeArr.filter((num) => !array.includes(num));
+
+//   console.log(x);
+//   for (let int of x) {
+//     missingSum += int;
+//   }
+
+//   return missingSum;
+// };
+
+// console.log(sumMissingNumbers([4, 3, 8, 1, 2]));
+
+/* 2204
+
+Given an array of numbers, create a function that removes 25% from every number in the array except the smallest number, and adds the total amount removed to the smallest number.
+*/
+
+// const showTheLove = (arr) => {
+//   //want to sort this arr
+//   //remove the last element
+//   let ogArr = arr;
+
+//   //go throught this new array and add 25% of each element to a variable -- then add this variable to number we popped off
+
+//   arr.sort((a, b) => {
+//     return b - a;
+//   });
+
+//   let poor = arr.pop();
+
+//   // console.log('arr',arr)
+//   //take 25% of items in arr to give to poor
+//   let addOn = 0;
+//   let returnArr = [];
+//   for (let int of arr) {
+//     addOn += 0.25 * int;
+//     returnArr.push(int * 0.75);
+//   }
+//   returnArr.push(poor+addOn)
+
+//   // console.log(addOn);
+//   // console.log("arr", arr);
+//   // console.log("[poor]", poor+addOn);
+//   // console.log("returnArr", returnArr);
+//   return returnArr
+
+// };
+// console.log(showTheLove([4, 1, 4]));
+
+const showTheLove = (arr) => {
+  //find index of min value that we need to donate too
+
+  let min = Math.min(...arr);
+  // console.log(min)
+
+  let indexOfMin = arr.indexOf(min);
+  console.log(indexOfMin);
+
+  let donation = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    //if the index !== indexOfMin; take 25% of the value and add it to the donation
+    //set its new value as 0.75*initial value
+    if (i !== indexOfMin) {
+      donation += 0.25 * arr[i];
+      arr[i] *= 0.75
+      //confirmed that the the larger values are now reduced by 25%, the dontation has been collected, now needs to be added
+    }
   }
+  arr[indexOfMin] += donation
 
-  // console.log(array);
+  console.log(arr)
+  console.log('donation',donation)
 
-  let x = completeArr.filter((num) => !array.includes(num));
-
-  console.log(x);
-  for (let int of x) {
-    missingSum += int;
-  }
-
-  return missingSum;
 };
 
-console.log(sumMissingNumbers([4, 3, 8, 1, 2]));
-
-
+showTheLove([2, 100]);
