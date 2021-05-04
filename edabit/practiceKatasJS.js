@@ -1424,7 +1424,7 @@ Arrays can be mixed with various types. Your task for this challenge is to sum a
 //   }
 
 //   // console.log(array);
-
+//   x = array of items filtered from [completeArr] that are not included in [array]
 //   let x = completeArr.filter((num) => !array.includes(num));
 
 //   console.log(x);
@@ -1474,31 +1474,58 @@ Given an array of numbers, create a function that removes 25% from every number 
 // };
 // console.log(showTheLove([4, 1, 4]));
 
-const showTheLove = (arr) => {
-  //find index of min value that we need to donate too
+// const showTheLove = (arr) => {
+//   //find index of min value that we need to donate too
 
-  let min = Math.min(...arr);
-  // console.log(min)
+//   let min = Math.min(...arr);
+//   // console.log(min)
 
-  let indexOfMin = arr.indexOf(min);
-  console.log(indexOfMin);
+//   let indexOfMin = arr.indexOf(min);
+//   console.log(indexOfMin);
 
-  let donation = 0;
+//   let donation = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    //if the index !== indexOfMin; take 25% of the value and add it to the donation
-    //set its new value as 0.75*initial value
-    if (i !== indexOfMin) {
-      donation += 0.25 * arr[i];
-      arr[i] *= 0.75
-      //confirmed that the the larger values are now reduced by 25%, the dontation has been collected, now needs to be added
-    }
-  }
-  arr[indexOfMin] += donation
+//   for (let i = 0; i < arr.length; i++) {
+//     //if the index !== indexOfMin; take 25% of the value and add it to the donation
+//     //set its new value as 0.75*initial value
+//     if (i !== indexOfMin) {
+//       donation += 0.25 * arr[i];
+//       arr[i] *= 0.75
+//       //confirmed that the the larger values are now reduced by 25%, the dontation has been collected, now needs to be added
+//     }
+//   }
+//   arr[indexOfMin] += donation
 
-  console.log(arr)
-  console.log('donation',donation)
+//   return arr
 
-};
+// };
 
-showTheLove([2, 100]);
+// showTheLove([2, 100]);
+
+/* 0921
+Write a function that returns the least common multiple (LCM) of two integers.
+0941
+*/
+
+// const lcm = (n1, n2) => {
+//   //lcm = first number that both n1,n2 are completely divisilbe by
+
+//   let lcm = 0;
+
+//   let loopStatus = true;
+//   let i = 1;
+//   while (loopStatus) {
+//     //go from i = 0 --------------- till some number that is the lcm
+
+//     if (i % n1 !== 0 || i % n2 !== 0) {
+//       i++;
+//     } else {
+//       lcm = i;
+//       loopStatus = false;
+//     }
+//   }
+
+//   return lcm;
+// };
+
+// console.log(lcm(8, 5));
