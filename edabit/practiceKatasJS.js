@@ -1583,10 +1583,128 @@ Write a function that returns the least common multiple (LCM) of two integers.
 //   for (let str of x) {
 //     // console.log(str)
 //     let remove1 = str.slice(1);
-//     retString += remove1 + str[0] + "ay "; 
+//     retString += remove1 + str[0] + "ay ";
 //   }
 
 //   return retString;
 // };
 
 // console.log(basicTranslator());
+
+//15.05
+const salesTaxRates = {
+  AB: 0.05,
+  BC: 0.12,
+  SK: 0.1,
+  CA: 0.5,
+};
+
+const companySalesData = [
+  {
+    name: "Telus",
+    province: "BC",
+    sales: [100, 200, 400],
+  },
+  {
+    name: "Bombardier",
+    province: "AB",
+    sales: [80, 20, 10, 100, 90, 500],
+  },
+  {
+    name: "Telus",
+    province: "SK",
+    sales: [500, 100],
+  },
+  {
+    name: "TESLA",
+    province: "CA",
+    sales: [500000000, 100],
+  },
+];
+
+// // // //   /* structure of return object
+// // // //       {
+// // // //         "companyName1":{totalSales:xxx, totalTaxes:yyy},
+// // // //         "companyName2":{totalSales:xxx, totalTaxes:yyy}
+// // // //       }
+
+// // // //       */
+
+//17.20
+// want 1 function that takes salesTaxRates and companySalesData
+
+const calculateSalesTax = function (salesData, taxRates) {
+  // Implement your code here
+
+  //steps:
+  /*
+  // create functions to calculate total sale/company/province and then the tax owed in that province
+
+  then we need to add the values to our return object for the given compay using the following logic i think 
+  //if the key does not exist in the return obj, then add the company and its {totalSales:xxx, totalTaxes:xxx} entry
+    else if the key does exist in the return update the totalSales:xxx, totalTaxes:xxx
+  
+  */
+  let returnObj = {};
+
+  // new approach,lets update the salesData obj with keys of salesTotal, taxOwed once that's done, we can figure out the return obj
+
+  //cps - companyPerState
+  //salesTotal
+  for (let i = 0; i < salesData.length; i++) {
+    let totalSales = 0;
+    // console.log('cps',cps)
+    //sum up contents of cps.sales
+    // cps.sales.forEach((x) => (totalSales += x));
+    // salesData[0]["salesTotal"] = totalSales;
+    // console.log('1652',salesData[i])
+    salesData[i].sales.forEach((x) => (totalSales += x));
+    salesData[i]["totalSales"] = totalSales;
+  }
+
+  // console.log("1659", salesData);
+  //now that totalSales has been added, we need to calculate the tax owed and add it to the object
+  //same as above excep now we need to check the province in order to get the correct rate
+
+  for (let i = 0; i < salesData.length; i++) {
+    //console.log('1662',salesData[i])
+
+    for (province in taxRates) {
+      let totalTax = 0;
+      //rate = key
+      // console.log('1666', taxRates[province])
+      //if province === salesDataProvince
+      if (province === salesData[i].province) {
+        //update totalTax and add it to the object
+        totalTax = salesData[i].totalSales * taxRates[province];
+        salesData[i]["totalTax"] = totalTax;
+      }
+    }
+
+    //this is the same but will be different calc once we have the correct tax rate
+    // salesData[i].sales.forEach((x) => (totalTax += x.totalSales*taxRate));
+    // salesData[i]["totalTax"] = totalTax;
+  }
+
+  //loop through salesData, if the company does not exist in returnObj, add it and the sums,
+  //cpp company per province
+  for (let cpp of salesData) {
+    // console.log('cpp',cpp)
+    //check if cpp.name doesnt exist in return obj
+    if (!returnObj[cpp.name]) {
+      returnObj[cpp.name] = {
+        totalSales: cpp.totalSales,
+        totalTax: cpp.totalTax,
+      };
+    } else {
+      //company already is in the retobj
+      // update totalSales and totalTax
+      returnObj[cpp.name].totalSales += cpp.totalSales;
+      returnObj[cpp.name].totalTax += cpp.totalTax;
+    }
+  }
+
+  return returnObj;
+};
+
+console.log(calculateSalesTax(companySalesData, salesTaxRates));
