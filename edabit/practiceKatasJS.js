@@ -1386,3 +1386,55 @@ Arrays can be mixed with various types. Your task for this challenge is to sum a
 // }
 
 // console.log(rev(5121))
+
+// const getBudgets = (arr) => {
+//   let totalBudget = 0;
+
+//   for (let person of arr) {
+//     totalBudget += person.budget;
+//   }
+
+//   return totalBudget;
+// };
+
+// console.log(getBudgets([
+//   { name: "John", age: 21, budget: 23000 },
+//   { name: "Steve", age: 32, budget: 40000 },
+//   { name: "Martin", age: 16, budget: 2700 },
+// ]));
+
+const sumMissingNumbers = function (array) {
+  let missingSum = 0;
+
+  //have an array with numbers, lets sort it so that we can get the max and min vals in the array
+  //then generate a new array with ALL values within the
+
+  array.sort((a, b) => {
+    return a - b;
+  });
+  // console.log(array);
+  let maxRange = array[array.length - 1];
+  let minRange = array[0];
+
+  //create new list of range that excludes numbers in array
+  let completeArr = [];
+
+  for (let i = minRange; i <= maxRange; i++) {
+    completeArr.push(i);
+  }
+
+  // console.log(array);
+
+  let x = completeArr.filter((num) => !array.includes(num));
+
+  console.log(x);
+  for (let int of x) {
+    missingSum += int;
+  }
+
+  return missingSum;
+};
+
+console.log(sumMissingNumbers([4, 3, 8, 1, 2]));
+
+
