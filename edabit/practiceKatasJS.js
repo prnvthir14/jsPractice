@@ -1529,3 +1529,64 @@ Write a function that returns the least common multiple (LCM) of two integers.
 // };
 
 // console.log(lcm(8, 5));
+
+// const panDigital = (num) => {
+//   let numStr = JSON.stringify(num);
+
+//   let panNums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+//   let nums = [];
+//   //make a num array
+//   for (let digit of numStr) {
+//     nums.push(Number(digit));
+//   }
+//   // console.log(nums);
+//   //y=nums.some(r=> panNums.indexOf(r) >= 0)
+//   // console.log('nums',nums)
+//   // console.log('panNums',panNums)
+//   for (let num of nums) {
+
+//     //console.log('num',num)
+//     if (panNums.indexOf(num) < 0) {
+//       console.log('hisss',panNums.indexOf(7))
+//       return false;
+//     }
+
+//   }
+
+//   return true;
+// };
+
+// console.log(panDigital(90864523148909));
+// const process = require("process");
+
+// const reverseString = () => {
+//   let x = process.argv.slice(2);
+
+//   //take each item in x, reverse it and then print it to the console one after the other
+
+//   x.forEach((input) => {
+//     let rev = "";
+//     for (let i = input.length-1; i >= 0; i--) {
+//       rev += input[i];
+//     }
+//     console.log(rev)
+//   });
+// };
+
+// reverseString();
+
+// const basicTranslator = () => {
+//   x = process.argv.slice(2);
+//   // console.log(x)
+//   let retString = "";
+//   for (let str of x) {
+//     // console.log(str)
+//     let remove1 = str.slice(1);
+//     retString += remove1 + str[0] + "ay "; 
+//   }
+
+//   return retString;
+// };
+
+// console.log(basicTranslator());
